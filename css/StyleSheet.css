@@ -50,6 +50,33 @@ body {
 
 /* Media Queries para responsividade */
 
+.center {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap; /* impede quebra e empilhamento */
+}
+
+.foto-rosto {
+  width: 120px;  /* pode ajustar para caber melhor no celular */
+  height: auto;
+  border-radius: 4px;
+  flex-shrink: 0; /* impede a foto de encolher */
+}
+
+.bio-texto {
+  flex: 1;
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+
 /* Para telas menores que 768px (tablets e celulares em modo paisagem) */
 @media (max-width: 768px) {
     .center {
