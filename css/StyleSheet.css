@@ -49,47 +49,46 @@ body {
     }
 }
 
-.foto-rosto {
-  width: 90%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-.perfil {
+.perfil-box {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  border-radius: 8px;
 }
 
 .foto-rosto {
-  width: 180px;
+  width: 200px;
   height: auto;
-  border-radius: 6px;
+  margin-right: 20px;
+  border-radius: 4px;
   flex-shrink: 0;
 }
 
-.bio {
+.bio-texto {
   flex: 1;
-  min-width: 250px;
+  text-align: justify;
 }
 
+/* Responsivo para smartphones */
 @media (max-width: 600px) {
-  .perfil {
+  .perfil-box {
     flex-direction: column;
     align-items: center;
     text-align: justify;
   }
 
   .foto-rosto {
-    width: 60%;
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 70%;
     max-width: 250px;
   }
 
-  .bio {
+  .bio-texto {
     width: 90%;
   }
 }
