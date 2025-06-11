@@ -1,4 +1,3 @@
-
 a {
     color: #2d2d2d;
     text-decoration: none;
@@ -8,16 +7,16 @@ a:hover {
     text-decoration: underline;
 }
 
-.flex-icons{
-    display:flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-/*   flex-wrap: wrap; */
+.flex-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* flex-wrap: wrap; */ /* Você pode ativar se quiser quebra automática */
 }
 
-.flex-icons-container{
-   /* display: flex;*/
-   margin: 20px 0px 15px 0px;
+.flex-icons-container {
+    /* display: flex; */
+    margin: 20px 0px 15px 0px;
 }
 
 .center {
@@ -26,9 +25,46 @@ a:hover {
     width: 40%;
     border: 3px solid #D8D8D8;
     padding: 15px;
-    background-color: #FFFFFF
-}
-body {
-    background-color: #F3F3F3
+    background-color: #FFFFFF;
 }
 
+/* Estilo para o body */
+body {
+    background-color: #F3F3F3;
+}
+
+/* Media Queries para responsividade */
+
+/* Para telas menores que 768px (tablets e celulares em modo paisagem) */
+@media (max-width: 768px) {
+    .center {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .flex-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Para telas menores que 480px (celulares em modo retrato) */
+@media (max-width: 480px) {
+    .center {
+        width: 90%;
+        padding: 10px;
+        border-width: 2px;
+        border-radius: 15px;
+    }
+
+    .flex-icons {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
