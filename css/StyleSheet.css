@@ -49,6 +49,15 @@ body {
     }
 }
 
+.foto-rosto {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
 /* Para telas menores que 480px (celulares em modo retrato) */
 @media (max-width: 480px) {
     .center {
