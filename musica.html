@@ -1,160 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Música da Bella</title>
+<meta charset="UTF-8">
+<title>Música da Bella</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 1.5s forwards;
-      padding: 20px;
-    }
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+  h1 {
+    margin-bottom: 20px;
+  }
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+  .linha {
+    opacity: 0.3;
+    transition: 0.4s;
+    font-size: 20px;
+  }
 
-    button {
-      padding: 15px 25px;
-      font-size: 18px;
-      border: none;
-      border-radius: 10px;
-      background: #00c853;
-      color: white;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  .ativa {
+    opacity: 1;
+    color: #00e676;
+    transform: scale(1.05);
+  }
 
-    button:hover {
-      background: #00e676;
-      transform: scale(1.05);
-    }
-
-    .letra {
-      margin-top: 30px;
-      max-width: 500px;
-      line-height: 1.6;
-      font-size: 18px;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .mostrar {
-      opacity: 1;
-    }
-
-    .secao {
-      margin-bottom: 20px;
-    }
-
-    .titulo {
-      color: #00e676;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-  </style>
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #00c853;
+    color: white;
+    cursor: pointer;
+  }
+</style>
 </head>
 
 <body>
 
 <h1>🎵 Tocando música da Bella</h1>
 
-<button id="playBtn" style="display:none;">▶️ Tocar</button>
+<div id="letra">
+  <div class="linha">Essa é a Bella</div>
+  <div class="linha">Ela tem uma guela</div>
+  <div class="linha">Fica na janela</div>
+  <div class="linha">Assiste novela</div>
+  <div class="linha">É uma donzela</div>
 
-<div id="letra" class="letra">
+  <br>
 
-  <div class="secao">
-    <div class="titulo">[Verso 1]</div>
-    Essa é a Bella<br>
-    Ela tem uma guela<br>
-    Fica na janela<br>
-    Assiste novela<br>
-    É uma donzela
-  </div>
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">É uma donzela</div>
+  <div class="linha">Não mexe com ela</div>
 
-  <div class="secao">
-    <div class="titulo">[Refrão]</div>
-    Não mexe com ela<br>
-    Não mexe com ela<br>
-    É uma donzela<br>
-    Não mexe com ela
-  </div>
+  <br>
 
-  <div class="secao">
-    <div class="titulo">[Verso 2]</div>
-    Essa é a Bella<br>
-    Ela é banguela<br>
-    Tem fralda amarela<br>
-    Come berinjela<br>
-    Dentro da panela
-  </div>
+  <div class="linha">Essa é a Bella</div>
+  <div class="linha">Ela é banguela</div>
+  <div class="linha">Tem fralda amarela</div>
+  <div class="linha">Come berinjela</div>
+  <div class="linha">Dentro da panela</div>
 
-  <div class="secao">
-    <div class="titulo">[Refrão]</div>
-    Não mexe com ela<br>
-    Não mexe com ela<br>
-    Dentro da panela<br>
-    Não mexe com ela
-  </div>
+  <br>
 
-  <div class="secao">
-    <div class="titulo">[Ponte]</div>
-    Ela dança na sala<br>
-    Com um passo de gala<br>
-    Ela ainda nem fala<br>
-    Tem choro que embala
-  </div>
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">Dentro da panela</div>
+  <div class="linha">Não mexe com ela</div>
 
-  <div class="secao">
-    <div class="titulo">[Refrão]</div>
-    Não mexe com ela<br>
-    Não mexe com ela<br>
-    Seja numa capela<br>
-    Ou na passarela
-  </div>
+  <br>
 
+  <div class="linha">Ela dança na sala</div>
+  <div class="linha">Com um passo de gala</div>
+  <div class="linha">Ela ainda nem fala</div>
+  <div class="linha">Tem choro que embala</div>
+
+  <br>
+
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">Não mexe com ela</div>
+  <div class="linha">Seja numa capela</div>
+  <div class="linha">Ou na passarela</div>
 </div>
 
-<audio id="player" autoplay loop>
+<button id="playBtn" style="display:none;">▶️ Play</button>
+
+<audio id="player" autoplay>
   <source src="https://www.dropbox.com/scl/fi/nbzbjz3ftnxae4adkrxi2/essaeabella.mp3?rlkey=xuhjdm1l3jbikt4fmrisedu7s&st=ckz5bfa9&raw=1" type="audio/mpeg">
 </audio>
 
 <script>
-  const player = document.getElementById("player");
-  const btn = document.getElementById("playBtn");
-  const letra = document.getElementById("letra");
+const player = document.getElementById("player");
+const btn = document.getElementById("playBtn");
+const linhas = document.querySelectorAll(".linha");
 
-  player.play().catch(() => {
-    btn.style.display = "inline-block";
-  });
+// fallback autoplay
+player.play().catch(() => {
+  btn.style.display = "block";
+});
 
-  btn.onclick = () => {
-    player.play();
-    btn.style.display = "none";
-  };
+btn.onclick = () => {
+  player.play();
+  btn.style.display = "none";
+};
 
-  // Mostra a letra depois de 8 segundos
-  player.addEventListener("timeupdate", () => {
-    if (player.currentTime > 11) {
-      letra.classList.add("mostrar");
+// tempos de cada linha (em segundos)
+const timing = [
+  2,4,6,8,10,
+  13,15,17,19,
+  23,25,27,29,31,
+  35,37,39,41,
+  45,47,49,51,
+  55,57,59,61
+];
+
+player.addEventListener("timeupdate", () => {
+  const t = player.currentTime;
+
+  linhas.forEach((linha, i) => {
+    if (t >= timing[i]) {
+      linha.classList.add("ativa");
     }
   });
+});
 </script>
 
 </body>
