@@ -1,25 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Essa é a Bella</title>
-</head>
-<body style="background:black; color:white; text-align:center;">
+  <title>Música da Bella</title>
 
-<audio id="player" autoplay>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #00c853;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #00e676;
+      transform: scale(1.05);
+    }
+
+    .hint {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎵 Tocando música da Bella</h1>
+  <button id="playBtn" style="display:none;">▶️ Play</button>
+  <div class="hint">Se não tocar automaticamente, clique no botão</div>
+</div>
+
+<audio id="player" autoplay loop>
   <source src="https://www.dropbox.com/scl/fi/nbzbjz3ftnxae4adkrxi2/essaeabella.mp3?rlkey=xuhjdm1l3jbikt4fmrisedu7s&st=ckz5bfa9&raw=1" type="audio/mpeg">
 </audio>
 
 <script>
   const player = document.getElementById("player");
+  const btn = document.getElementById("playBtn");
 
   player.play().catch(() => {
-    const btn = document.createElement("button");
-    btn.innerText = "▶️ Essa é a Bella";
-    btn.style.fontSize = "20px";
-    btn.onclick = () => player.play();
-    document.body.appendChild(btn);
+    btn.style.display = "inline-block";
   });
+
+  btn.onclick = () => {
+    player.play();
+    btn.style.display = "none";
+  };
 </script>
 
 </body>
