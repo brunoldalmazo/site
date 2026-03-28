@@ -24,10 +24,10 @@
 
   .linha {
     display: none;
-    font-size: 28px;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
+    font-size: clamp(20px, 6vw, 32px);
+    padding: 0 10px;
+    word-wrap: break-word;
+}
 
   .ativa {
     display: block;
@@ -111,7 +111,7 @@ btn.onclick = () => {
 const timing = [
   12,16,19,22,26,
   28,32,36,40,
-  49,53,57,61,64,
+  49,53,56,59,63,
   65,69,73,77,
   94,98,102,104,
   110,114,117,122
