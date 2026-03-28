@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f0f0f">
 <title>Música da Bella</title>
 
 <style>
   body {
     margin: 0;
+    overflow: hidden;
     min-height: 100vh;
     background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
     color: white;
@@ -54,6 +56,9 @@
 <h1>🎵 Tocando música da Bella</h1>
 
 <div id="letra">
+  <div class="linha">🎵 3 🎵</div>
+  <div class="linha">🎵 2 🎵</div>
+  <div class="linha">🎵 1 🎵</div>
   <div class="linha">Essa é a Bella</div>
   <div class="linha">Ela tem uma guela</div>
   <div class="linha">Fica na janela</div>
@@ -85,6 +90,8 @@
   <div class="linha">Não mexe com ela</div>
   <div class="linha">Seja numa capela</div>
   <div class="linha">Ou na passarela</div>
+  <div class="linha">Lá, lá, lá, ...🎵</div>
+  
 </div>
 
 <button id="playBtn" style="display:none;">▶️ Play</button>
@@ -98,6 +105,12 @@ const player = document.getElementById("player");
 const btn = document.getElementById("playBtn");
 const linhas = document.querySelectorAll(".linha");
 
+document.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  }
+}, { once: true });
+
 // autoplay fallback
 player.play().catch(() => {
   btn.style.display = "block";
@@ -110,12 +123,12 @@ btn.onclick = () => {
 
 // timing (+10 segundos já aplicado)
 const timing = [
-  12,16,19,22,26,
+  2, 5, 8, 12,16,19,22,26,
   28,32,36,40,
   49,53,56,59,63,
   65,69,73,77,
   94,98,102,104,
-  110,114,117,122
+  110,114,117,122, 127
 ];
 
 let linhaAtual = -1;
