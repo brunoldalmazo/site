@@ -38,6 +38,16 @@
     color: #00e676;
   }
 
+  #abelha {
+  position: fixed;
+  font-size: 40px;
+  left: -80px;
+  top: 40%;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+}
+
   button {
     margin-top: 30px;
     padding: 12px 25px;
@@ -48,10 +58,20 @@
     color: white;
     cursor: pointer;
   }
+
+  @keyframes voarCurva {
+  0%   { left: -80px; top: 30%; transform: rotate(0deg); }
+  25%  { top: 40%; transform: rotate(8deg); }
+  50%  { top: 35%; transform: rotate(-8deg); }
+  75%  { top: 45%; transform: rotate(5deg); }
+  100% { left: 110%; top: 30%; transform: rotate(0deg); }
+}
+  
 </style>
 </head>
 
 <body>
+  <img id="abelha" src="abelha.png"> 
 
 <h1>🎤 Karaokê da Bella</h1>
 
@@ -149,6 +169,30 @@ player.addEventListener("timeupdate", () => {
     }
   }
 });
+
+  const abelha = document.getElementById("abelha");
+
+function voarAbelha() {
+  abelha.style.animation = "none";
+  abelha.offsetHeight; // reset
+  abelha.style.opacity = 1;
+  abelha.style.animation = "voarCurva 12s linear";
+
+  setTimeout(() => {
+    abelha.style.opacity = 0;
+  }, 12000);
+}
+
+// começa depois da contagem
+setTimeout(() => {
+  voarAbelha();
+}, 15000);
+
+// repete de tempos em tempos
+setInterval(() => {
+  voarAbelha();
+}, 25000);
+  
 </script>
 
 </body>
