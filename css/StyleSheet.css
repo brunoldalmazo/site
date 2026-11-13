@@ -1,9 +1,10 @@
 a {
-    color: #2d2d2d;
+    color: #0076BC; /* azul institucional FURG */
     text-decoration: none;
 }
 
 a:hover {
+    color: #005A8F;
     text-decoration: underline;
 }
 
@@ -23,14 +24,22 @@ a:hover {
     border-radius: 25px;
     margin: auto;
     width: 40%;
-    border: 3px solid #D8D8D8;
+    border: 3px solid #CFE8F4;
     padding: 15px;
     background-color: #FFFFFF;
 }
 
+h3 {
+    color: #1a1a1a;
+    border-bottom: 2px solid #0076BC;
+    padding-bottom: 8px;
+    margin-top: 0;
+    overflow: hidden; /* impede a linha de passar por baixo da foto flutuante */
+}
+
 /* Estilo para o body */
 body {
-    background-color: #F3F3F3;
+    background-color: #F4F8FB; /* levemente azulado */
 }
 
 /* Media Queries para responsividade */
